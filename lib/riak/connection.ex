@@ -12,4 +12,11 @@ defmodule Riak.Connection do
   def start(host \\ '127.0.0.1', port \\ 8087) do
     :riakc_pb_socket.start(host, port)
   end
+
+  @doc """
+  Stop the riak connection.
+  """
+  def stop(pid) do
+    :riakc_pb_socket.stop(pid)
+  end
 end
